@@ -1,66 +1,39 @@
-## Foundry
+# Aave Liquidation Operator
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Installing Foundry
 
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+1. Run the following commands to install Foundry:
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
 ```
 
-### Test
-
-```shell
-$ forge test
+2. Verify installation:
+```bash
+forge --version
 ```
 
-### Format
+## Environment Setup
 
-```shell
-$ forge fmt
+1. Create `.env` file:
+```bash
+# Ethereum RPC URL (Infura/Alchemy)
+MAINNET_RPC_URL=https://eth-mainnet.alchemyapi.io/v2/YOUR-API-KEY
 ```
 
-### Gas Snapshots
-
-```shell
-$ forge snapshot
+2. Load environment variables:
+```bash
+source .env
 ```
 
-### Anvil
+## Running Tests
 
-```shell
-$ anvil
+```bash
+# Run tests with verbose output
+forge test -vv --match-test testLiquidation
 ```
 
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+This will:
+- Fork mainnet at block 12489619
+- Execute the liquidation
+- Display liquidation results
