@@ -18,7 +18,7 @@ the liquidation bonus represent the discount when you buy the collateral. for ex
 
 3. Maximum liquidation amount(The best profit)
 
-The Maximum asset value we can liquidate is the Collateral Value, because the liquidation exsist, 所以我们只要花费:
+The Maximum asset value we can liquidate is the Collateral Value, because the liquidation exsist, so we just need to spend:
 $$
 \text{Maximum Spend} = \frac{\text{Collateral Value}}{1 + \text{Liquidation Bonus}}
 $$
